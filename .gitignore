@@ -1,0 +1,13 @@
+.classpath
+.DS_Store
+.idea
+.project
+.salesforce
+.settings
+.sfdx/
+.tern-project
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+jsconfig.json
+*.code-workspace

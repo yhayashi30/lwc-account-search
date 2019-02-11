@@ -1,0 +1,49 @@
+<template>
+    <lightning-card >
+        <div class="slds-m-around_medium">
+            <h1 class="slds-text-heading_small">Account SearchForm</h1>
+            <p class="slds-text-body_regular">Enter the conditions for searching for the target account.</p>
+        </div>
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+        <div class="c-container">
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="AcocuntName">Account Name</p>
+                    </div>
+                    <lightning-input label="AccountName" name="accountName" variant="label-hidden" onchange={handleAccountNameChange} value={accountName}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Phone">Phone</p>
+                    </div>
+                    <lightning-input label="Phone" name="phone" type="tel" variant="label-hidden" onchange={handlePhoneChange} value={phone}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Type">Type</p>
+                    </div>
+                    <lightning-combobox
+                        label="Type"
+                        name="type"
+                        value={type}
+                        placeholder="Select Type"
+                        options={options}
+                        variant="label-hidden"
+                        onchange={handleTypeChange} ></lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="DunsNumber">DunsNumber</p>
+                    </div>
+                    <lightning-input label="DunsNumber" name="dunsNumber" variant="label-hidden" onchange={handleDunsNumberChange} value={dunsNumber}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button variant="search" label="Search" title="Search" onclick={handleSearch} class="slds-m-left_x-small"></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
